@@ -1,0 +1,30 @@
+{
+  "name": "hangman",
+  "private": true,
+  "description": "Rolling Scopes School Stage-1 (JavaScript/Front-end 2023Q4) project «Hangman»",
+  "scripts": {
+    "lint": "npx eslint js",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier js --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all",
+    "not < 0.25%"
+  ],
+  "engines": {
+    "node": "^16"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.1.1",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-order": "^6.0.3"
+  }
+}
