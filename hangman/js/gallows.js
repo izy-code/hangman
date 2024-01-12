@@ -6,7 +6,7 @@ const partsNumberToName = {
   3: 'left-arm',
   4: 'right-arm',
   5: 'left-leg',
-  6: 'head'
+  6: 'right-leg',
 };
 
 const gallowsNode = createNode(
@@ -20,7 +20,6 @@ const gallowsNode = createNode(
   },
   true
 );
-
 const svgUseNode = createNode(
   'use',
   'gallows__use',
@@ -33,10 +32,13 @@ const svgUseNode = createNode(
 
 const showBodyPart = (partNumber) => {
   animateValue(0, 1, 1200, (value) => {
-    gallowsNode.style.setProperty(`--${partsNumberToName[partNumber]}-opacity`, value);
+    gallowsNode.style.setProperty(
+      `--${partsNumberToName[partNumber]}-opacity`,
+      value
+    );
   });
 };
 
 gallowsNode.append(svgUseNode);
 
-export { gallowsNode };
+export { partsNumberToName, gallowsNode };
