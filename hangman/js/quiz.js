@@ -11,11 +11,15 @@ const guessesNode = createNode('p', 'quiz__guesses');
 const guessesCountNode = createNode('span', 'quiz__count');
 
 const createLetters = (word) => {
+  const fragment = document.createDocumentFragment();
+
   for (let i = 0; i < word.length; i++) {
     const letterNode = createNode('li', 'quiz__letter');
 
-    wordNode.append(letterNode);
+    fragment.append(letterNode);
   }
+
+  wordNode.append(fragment);
 };
 
 const setGuessesCount = (guessNumber) => {

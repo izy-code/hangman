@@ -12,7 +12,7 @@ const resetKeyboard = () => {
 };
 
 for (let charCode = CHAR_CODE_A; charCode <= CHAR_CODE_Z; charCode++) {
-  const keyNode = createNode('button', 'quiz__key');
+  const keyNode = createNode('button', 'quiz__key', {type: 'button'});
   const keyLetter = String.fromCharCode(charCode);
 
   keyNode.textContent = keyLetter;
