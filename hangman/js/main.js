@@ -10,3 +10,7 @@ headingNode.textContent = 'Hangman game';
 mainNode.append(headingNode, gallowsNode, quizNode);
 
 document.body.append(mainNode);
+
+setTimeout(() => {
+  alert('Ensure your keyboard is set to the English layout.');
+}, 500);
