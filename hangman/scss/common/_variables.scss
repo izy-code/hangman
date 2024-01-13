@@ -1,12 +1,9 @@
 @use "sass:color";
 
 $width-desktop: 1440px;
-$width-max: 1250px;
 $width-laptop: 1100px;
 $width-tablet: 768px;
 $width-mobile: 360px;
-$width-min: 320px;
-
 
 $color-white: #fffefe;
 $color-black: #000000;
@@ -18,7 +15,6 @@ $color-light: #e1d4c9;
 $color-red: #ff4d4d;
 $color-green: #5eaa2f;
 $color-grey: #f0f0f0;
-
 
 :root {
   --font-primary: "Arial", sans-serif;

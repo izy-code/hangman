@@ -1,5 +1,7 @@
 @use "../common/forward" as *;
 
+$width-max: 1250px;
+
 .main-content {
   display: grid;
   grid-template-columns: 400px 1fr;
