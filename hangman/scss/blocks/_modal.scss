@@ -1,0 +1,55 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-backdrop);
+
+  &--closed {
+    display: none;
+  }
+}
+
+.modal__content {
+  position: relative;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--color-bg-modal);
+  border-radius: 10px;
+}
+
+.modal__title {
+  margin: 0 0 24px;
+  font-size: 32px;
+  line-height: 35px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  &--win {
+    color: var(--color-text-modal-win);
+  }
+
+  &--fail {
+    color: var(--color-text-modal-fail);
+  }
+}
+
+.modal__answer {
+  margin: 0 0 24px;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.modal__restart {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}

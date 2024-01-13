@@ -15,7 +15,7 @@ const showModal = (isWin, answer) => {
     titleNode.textContent = 'Your guess was wrong';
   }
 
-  answerNode.textContent = `The answer is: ${answer}`;
+  answerNode.textContent = `The answer is: ${answer.toUpperCase()}`;
   modalNode.classList.remove('modal--closed');
   document.body.style.overflow = 'hidden';
 };
