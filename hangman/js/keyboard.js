@@ -7,7 +7,7 @@ const keyboardNode = createNode('div', 'quiz__keyboard');
 
 const resetKeyboard = () => {
   for (let keyNode of keyboardNode.children) {
-    keyNode.classList.remove('quiz__key--selected');
+    keyNode.removeAttribute('disabled');
   }
 };
 
@@ -23,7 +23,7 @@ keyboardNode.addEventListener('click', (evt) => {
   const keyNode = evt.target.closest('.quiz__key');
 
   if (keyNode) {
-    keyNode.classList.add('quiz__key--selected');
+    keyNode.setAttribute('disabled', '');
   }
 });
 

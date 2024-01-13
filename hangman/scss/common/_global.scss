@@ -1,0 +1,17 @@
+@use "forward" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-body);
+}

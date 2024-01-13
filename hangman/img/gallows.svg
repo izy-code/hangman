@@ -1,8 +1,8 @@
 <svg id="game-picture" viewBox="0 0 370 590" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g class="gallows" fill="black" stroke-width="3">
-    <rect x="176.337" y="34.6662" width="39" height="199.598" transform="rotate(45 176.337 34.6662)" stroke="#fffefe" />
-    <rect x="34.5" y="1.5" width="39" height="578" rx="3.5" stroke="#fffefe" />
-    <rect x="351.5" y="34.5" width="39" height="350" rx="3.5" transform="rotate(90 351.5 34.5)" stroke="#fffefe" />
+    <rect x="176.337" y="34.6662" width="39" height="199.598" transform="rotate(45 176.337 34.6662)" stroke="var(--color-bg-body, #fffefe)" />
+    <rect x="34.5" y="1.5" width="39" height="578" rx="3.5" stroke="var(--color-bg-body, #fffefe)" />
+    <rect x="351.5" y="34.5" width="39" height="350" rx="3.5" transform="rotate(90 351.5 34.5)" stroke="var(--color-bg-body, #fffefe)" />
     <rect x="298" y="75" width="10" height="74" />
     <rect x="0" y="580" width="370" height="10" rx="4" />
   </g>

@@ -1,0 +1,8 @@
+@use "../common/forward" as *;
+
+.main-content {
+  min-width: $width-min;
+  max-width: $width-desktop;
+  margin-inline: auto;
+  padding: 20px 40px 40px;
+}

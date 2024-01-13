@@ -1,3 +1,38 @@
+:root {
+  --font-primary: "Helvetica", "Arial", sans-serif;
+  --color-text-dark: #403f3d;
+  --color-text-light: #e1d4c9;
+  --color-text-accent: #b0907a;
+  --color-bg-body: #e1d4c9;
+  --color-bg-container: #665f55;
+  --color-bg-backdrop: rgba(64, 63, 61, 0.8);
+  --color-bd-light: #c1b6ad;
+  --color-bd-dark: #665f55;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-body);
+}
+
+.main-content {
+  min-width: 320px;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 20px 40px 40px;
+}
+
 .gallows {
   --head-opacity: 0;
   --body-opacity: 0;
@@ -9,4 +44,4 @@
 
 .quiz__key--selected {
   background-color: green;
-}
+}/*# sourceMappingURL=style.css.map */
