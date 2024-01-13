@@ -1,6 +1,7 @@
 @use "../common/forward" as *;
 
 $width-max: 1250px;
+$height-min: 640px;
 
 .main-content {
   display: grid;
@@ -16,7 +17,17 @@ $width-max: 1250px;
   @include media-laptop {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 10px;
+
+    @media (max-height: $height-min) {
+      height: unset;
+    }
+  }
+
+  @media (width <= calc($width-mobile - 1px)) {
+    height: unset;
   }
 }
 
