@@ -1,1 +1,25 @@
+.quiz {
+  grid-area: 1 / 2 / 3 / 3;
+}
 
+.quiz__letters {
+  margin-bottom: 50px;
+}
+
+.quiz__question {
+  margin-bottom: 30px;
+}
+
+.quiz__guesses {
+  margin-bottom: 50px;
+}
+
+.quiz__keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  place-content: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid var(--color-bd-dark);
+}

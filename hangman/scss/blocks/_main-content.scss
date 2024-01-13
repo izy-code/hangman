@@ -1,8 +1,22 @@
 @use "../common/forward" as *;
 
 .main-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  column-gap: 60px;
+  place-items: center;
   min-width: $width-min;
-  max-width: $width-desktop;
-  margin-inline: auto;
-  padding: 20px 40px 40px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  background-color: var(--color-bg-main);
+  border-radius: 80px;
+}
+
+.main-content__title {
+  grid-column: 1;
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
 }
