@@ -13,6 +13,10 @@
   gap: 15px;
   justify-content: center;
   margin-bottom: 40px;
+
+  @include media-laptop {
+    margin-bottom: 18px;
+  }
 }
 
 .quiz__letter {
@@ -24,17 +28,33 @@
   font-size: 27px;
   line-height: 1;
   border-bottom: 3px solid var(--color-bd-dark);
+
+  @include media-laptop {
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+  }
 }
 
 .quiz__question {
   margin: 0;
   margin-bottom: 30px;
   font-size: 22px;
+
+  @include media-laptop {
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
 }
 
 .quiz__guesses {
   margin: 0;
   margin-bottom: 50px;
+
+  @include media-laptop {
+    margin-bottom: 18px;
+    font-size: 16px;
+  }
 }
 
 .quiz__count {
@@ -47,8 +67,12 @@
   gap: 8px;
   place-content: center;
   justify-content: center;
-  min-width: 340px;
   max-width: 500px;
+  margin-inline: auto;
+
+  @include media-laptop {
+    max-width: 450px;
+  }
 }
 
 .quiz__key {
@@ -56,10 +80,15 @@
   height: 48px;
   font-size: 24px;
   background-color: var(--color-btn-basic);
-  border: 1px solid;
+  border: 1px solid var(--color-bd-dark);
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.5s ease, opacity 0.5s ease;
+
+  @include media-laptop {
+    width: 40px;
+    height: 40px;
+  }
 
   &:hover,
   &:focus-visible {
