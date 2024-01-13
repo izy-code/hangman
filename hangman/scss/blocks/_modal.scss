@@ -30,7 +30,7 @@
   text-transform: uppercase;
 
   &--win {
-    color: var(--color-text-modal-win);
+    color: var(--color-text-success);
   }
 
   &--fail {
@@ -49,7 +49,17 @@
   display: block;
   margin: 0 auto;
   padding: 5px;
-  background-color: #ffffff;
+  background-color: var(--color-btn-basic);
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-btn-hover);
+  }
+
+  &:active {
+    background-color: var(--color-btn-active);
+  }
 }

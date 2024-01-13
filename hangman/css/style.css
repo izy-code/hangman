@@ -4,10 +4,15 @@
   --color-text-light: #e1d4c9;
   --color-text-accent: #b0907a;
   --color-text-alert: #ff4d4d;
+  --color-text-success: #5eaa2f;
+  --color-text-disabled: #000000;
   --color-bg-body: #e1d4c9;
   --color-bg-main: #fffefe;
-  --color-bg-container: #665f55;
+  --color-bg-modal: #e1d4c9;
   --color-bg-backdrop: rgba(64, 63, 61, 0.8);
+  --color-btn-basic: #f0f0f0;
+  --color-btn-hover: #e1d4c9;
+  --color-btn-active: #c1b6ad;
   --color-bd-light: #c1b6ad;
   --color-bd-dark: #665f55;
 }
@@ -27,7 +32,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: var(--font-primary);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 150%;
   font-weight: 600;
   color: var(--color-text-dark);
@@ -37,10 +42,10 @@ body {
 .main-content {
   display: grid;
   grid-template-columns: 400px 1fr;
-  column-gap: 60px;
+  column-gap: 50px;
   place-items: center;
   min-width: 320px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   padding: 40px;
   background-color: var(--color-bg-main);
@@ -112,11 +117,33 @@ body {
 .quiz__keyboard {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   place-content: center;
   justify-content: center;
-  padding: 20px;
-  border: 2px solid var(--color-bd-dark);
+  min-width: 340px;
+  max-width: 500px;
+}
+
+.quiz__key {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  background-color: var(--color-btn-basic);
+  border: 1px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, opacity 0.5s ease;
+}
+.quiz__key:hover, .quiz__key:focus-visible {
+  background-color: var(--color-btn-hover);
+}
+.quiz__key:active {
+  background-color: var(--color-btn-active);
+}
+.quiz__key:disabled {
+  color: var(--color-text-disabled);
+  background-color: var(--color-btn-hover);
+  opacity: 0.5;
 }
 
 .modal {
@@ -150,7 +177,7 @@ body {
   text-transform: uppercase;
 }
 .modal__title--win {
-  color: var(--color-text-modal-win);
+  color: var(--color-text-success);
 }
 .modal__title--fail {
   color: var(--color-text-alert);
@@ -167,7 +194,14 @@ body {
   display: block;
   margin: 0 auto;
   padding: 5px;
-  background-color: #ffffff;
+  background-color: var(--color-btn-basic);
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.modal__restart:hover, .modal__restart:focus-visible {
+  background-color: var(--color-btn-hover);
+}
+.modal__restart:active {
+  background-color: var(--color-btn-active);
 }/*# sourceMappingURL=style.css.map */

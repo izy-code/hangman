@@ -3,7 +3,7 @@
 .main-content {
   display: grid;
   grid-template-columns: 400px 1fr;
-  column-gap: 60px;
+  column-gap: 50px;
   place-items: center;
   min-width: $width-min;
   max-width: $width-max;

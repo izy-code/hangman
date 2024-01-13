@@ -5,7 +5,10 @@ import { modalNode } from './modal.js';
 
 const mainNode = createNode('main', 'main-content');
 const headingNode = createNode('h1', 'main-content__title');
-const quizNode = initQuiz('cat', 'Animal with four legs');
+const quizNode = initQuiz(
+  'JavaScript',
+  'What is a commonly used programming language for building web applications?'
+);
 
 headingNode.textContent = 'Hangman game';
 mainNode.append(headingNode, gallowsNode, quizNode, modalNode);
