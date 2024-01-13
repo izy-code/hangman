@@ -6,7 +6,7 @@
   column-gap: 60px;
   place-items: center;
   min-width: $width-min;
-  max-width: 1000px;
+  max-width: $width-max;
   margin: auto;
   padding: 40px;
   background-color: var(--color-bg-main);

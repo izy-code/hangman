@@ -71,7 +71,25 @@ body {
 }
 
 .quiz__letters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
   margin-bottom: 50px;
+}
+
+.quiz__letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: 27px;
+  line-height: 1;
+  border-bottom: 3px solid var(--color-bd-dark);
 }
 
 .quiz__question {
