@@ -3,6 +3,7 @@
   --color-text-dark: #403f3d;
   --color-text-light: #e1d4c9;
   --color-text-accent: #b0907a;
+  --color-text-alert: #ff4d4d;
   --color-bg-body: #e1d4c9;
   --color-bg-main: #fffefe;
   --color-bg-container: #665f55;
@@ -68,6 +69,7 @@ body {
 
 .quiz {
   grid-area: 1/2/3/3;
+  text-align: center;
 }
 
 .quiz__letters {
@@ -78,7 +80,7 @@ body {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .quiz__letter {
@@ -93,11 +95,18 @@ body {
 }
 
 .quiz__question {
+  margin: 0;
   margin-bottom: 30px;
+  font-size: 22px;
 }
 
 .quiz__guesses {
+  margin: 0;
   margin-bottom: 50px;
+}
+
+.quiz__count {
+  color: var(--color-text-alert);
 }
 
 .quiz__keyboard {
@@ -144,7 +153,7 @@ body {
   color: var(--color-text-modal-win);
 }
 .modal__title--fail {
-  color: var(--color-text-modal-fail);
+  color: var(--color-text-alert);
 }
 
 .modal__answer {

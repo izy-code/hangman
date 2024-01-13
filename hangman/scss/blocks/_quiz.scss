@@ -2,6 +2,7 @@
 
 .quiz {
   grid-area: 1 / 2 / 3 / 3;
+  text-align: center;
 }
 
 .quiz__letters {
@@ -11,7 +12,7 @@
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .quiz__letter {
@@ -26,11 +27,18 @@
 }
 
 .quiz__question {
+  margin: 0;
   margin-bottom: 30px;
+  font-size: 22px;
 }
 
 .quiz__guesses {
+  margin: 0;
   margin-bottom: 50px;
+}
+
+.quiz__count {
+  color: var(--color-text-alert);
 }
 
 .quiz__keyboard {
