@@ -34,6 +34,7 @@ body {
   min-width: 320px;
   min-height: 100%;
   margin: 0;
+  padding: 20px;
   font-family: var(--font-primary);
   font-size: 18px;
   line-height: 150%;
@@ -43,6 +44,7 @@ body {
 }
 @media (max-width: 1100px) {
   body {
+    padding: 0;
     background-color: var(--color-bg-main);
   }
 }
@@ -167,11 +169,6 @@ body {
 }
 
 .quiz__keyboard {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  place-content: center;
-  justify-content: center;
   max-width: 500px;
   margin-inline: auto;
 }
@@ -181,7 +178,15 @@ body {
   }
 }
 
-.quiz__key {
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  place-content: center;
+  justify-content: center;
+}
+
+.keyboard__key {
   width: 48px;
   height: 48px;
   font-size: 24px;
@@ -192,20 +197,20 @@ body {
   transition: background-color 0.5s ease, opacity 0.5s ease;
 }
 @media (max-width: 1100px) {
-  .quiz__key {
+  .keyboard__key {
     width: 40px;
     height: 40px;
   }
 }
 @media (hover: hover) {
-  .quiz__key:hover, .quiz__key:focus-visible {
+  .keyboard__key:hover, .keyboard__key:focus-visible {
     background-color: var(--color-btn-hover);
   }
 }
-.quiz__key:active {
+.keyboard__key:active {
   background-color: var(--color-btn-active);
 }
-.quiz__key:disabled {
+.keyboard__key:disabled {
   color: var(--color-text-disabled);
   background-color: var(--color-btn-hover);
   opacity: 0.5;
