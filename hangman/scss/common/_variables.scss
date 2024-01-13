@@ -12,16 +12,14 @@ $color-brown: #665f55;
 $color-light-brown: #b0907a;
 $color-semi-light: #c1b6ad;
 $color-light: #e1d4c9;
+$color-grey: #f0f0f0;
 $color-red: #ff4d4d;
 $color-green: #5eaa2f;
-$color-grey: #f0f0f0;
 
 :root {
   --font-primary: "Arial", sans-serif;
 
   --color-text-dark: #{$color-dark};
-  --color-text-light: #{$color-light};
-  --color-text-accent: #{$color-light-brown};
   --color-text-alert: #{$color-red};
   --color-text-success: #{$color-green};
   --color-text-disabled: #{$color-black};
@@ -32,9 +30,12 @@ $color-grey: #f0f0f0;
   --color-bg-backdrop: #{color.adjust($color-dark, $alpha: -0.2)};
 
   --color-btn-basic: #{$color-grey};
-  --color-btn-hover: #{$color-light};
-  --color-btn-active: #{$color-semi-light};
+  --color-btn-hover: #{$color-semi-light};
+  --color-btn-active: #{$color-light-brown};
 
-  --color-bd-light: #{$color-semi-light};
   --color-bd-dark: #{$color-brown};
+
+  @media (max-width: $width-laptop) {
+    --color-bg-main: #{$color-light};
+  }
 }

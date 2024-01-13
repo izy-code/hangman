@@ -1,8 +1,6 @@
 :root {
   --font-primary: "Arial", sans-serif;
   --color-text-dark: #403f3d;
-  --color-text-light: #e1d4c9;
-  --color-text-accent: #b0907a;
   --color-text-alert: #ff4d4d;
   --color-text-success: #5eaa2f;
   --color-text-disabled: #000000;
@@ -11,10 +9,14 @@
   --color-bg-modal: #e1d4c9;
   --color-bg-backdrop: rgba(64, 63, 61, 0.8);
   --color-btn-basic: #f0f0f0;
-  --color-btn-hover: #e1d4c9;
-  --color-btn-active: #c1b6ad;
-  --color-bd-light: #c1b6ad;
+  --color-btn-hover: #c1b6ad;
+  --color-btn-active: #b0907a;
   --color-bd-dark: #665f55;
+}
+@media (max-width: 1100px) {
+  :root {
+    --color-bg-main: #e1d4c9;
+  }
 }
 
 *,
