@@ -63,7 +63,9 @@
 
   &:hover,
   &:focus-visible {
-    background-color: var(--color-btn-hover);
+    @include media-hover {
+      background-color: var(--color-btn-hover);
+    }
   }
 
   &:active {

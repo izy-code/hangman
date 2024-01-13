@@ -134,8 +134,10 @@ body {
   cursor: pointer;
   transition: background-color 0.5s ease, opacity 0.5s ease;
 }
-.quiz__key:hover, .quiz__key:focus-visible {
-  background-color: var(--color-btn-hover);
+@media (hover: hover) {
+  .quiz__key:hover, .quiz__key:focus-visible {
+    background-color: var(--color-btn-hover);
+  }
 }
 .quiz__key:active {
   background-color: var(--color-btn-active);
@@ -199,8 +201,10 @@ body {
   cursor: pointer;
   transition: background-color 0.5s ease;
 }
-.modal__restart:hover, .modal__restart:focus-visible {
-  background-color: var(--color-btn-hover);
+@media (hover: hover) {
+  .modal__restart:hover, .modal__restart:focus-visible {
+    background-color: var(--color-btn-hover);
+  }
 }
 .modal__restart:active {
   background-color: var(--color-btn-active);
