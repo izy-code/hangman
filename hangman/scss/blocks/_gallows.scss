@@ -15,7 +15,7 @@
   margin-bottom: 30px;
 
   @include media-laptop {
-    $height-min: 220px;
+    $height-min: 160px;
 
     flex-grow: 1;
     height: $height-min;
