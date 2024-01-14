@@ -1,6 +1,6 @@
 import { createNode } from './util.js';
 import { checkLetter } from './game.js';
-import { showKeyboardLayoutModal } from './modal.js';
+import { showKeyboardModal } from './modal.js';
 
 const CHAR_CODE_A = 65;
 const CHAR_CODE_Z = 90;
@@ -71,7 +71,7 @@ document.addEventListener('keydown', (evt) => {
     }
   } else {
     if (!ALLOWED_KEYS.includes(evt.key)) {
-      showKeyboardLayoutModal();
+      showKeyboardModal();
     }
   }
 });

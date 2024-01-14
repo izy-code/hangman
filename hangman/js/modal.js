@@ -1,4 +1,5 @@
 import { createNode } from './util.js';
+import { startGame } from './game.js';
 
 const modalNode = createNode('div', 'modal modal--closed');
 const contentNode = createNode('div', 'modal__content');
@@ -16,6 +17,8 @@ const handleModalShow = () => {
 };
 
 const showModal = (isWin, answer) => {
+  modalNode.classList.remove('modal--keyboard');
+
   if (isWin) {
     titleNode.classList.add('modal__title--win');
     titleNode.textContent = 'You guessed correctly!';
@@ -29,7 +32,8 @@ const showModal = (isWin, answer) => {
   handleModalShow();
 };
 
-const showKeyboardLayoutModal = () => {
+const showKeyboardModal = () => {
+  modalNode.classList.add('modal--keyboard');
   titleNode.classList.add('modal__title--fail');
   titleNode.textContent = 'Wrong key or layout';
   answerNode.textContent =
@@ -43,6 +47,10 @@ const closeModal = () => {
   titleNode.classList.remove('modal__title--win');
   titleNode.classList.remove('modal__title--fail');
   document.body.classList.remove('no-scroll');
+
+  if (!modalNode.classList.contains('modal--keyboard')) {
+    startGame(false);
+  }
 };
 
 buttonNode.addEventListener('click', closeModal);
@@ -50,4 +58,4 @@ buttonNode.addEventListener('click', closeModal);
 contentNode.append(titleNode, answerNode, buttonNode);
 modalNode.append(contentNode);
 
-export { modalNode, showModal, closeModal, showKeyboardLayoutModal };
+export { modalNode, showModal, closeModal, showKeyboardModal };
