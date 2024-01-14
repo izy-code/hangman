@@ -1,6 +1,8 @@
 import { createNode } from './util.js';
 import { startGame } from './game.js';
 
+const OPACITY_TRANSITION_TIME_MS = 600;
+
 const modalNode = createNode('div', 'modal modal--closed');
 const contentNode = createNode('div', 'modal__content');
 const titleNode = createNode('h2', 'modal__title');
@@ -10,6 +12,7 @@ const buttonNode = createNode('button', 'modal__restart', { type: 'button' });
 const handleModalShow = () => {
   setTimeout(() => {
     buttonNode.focus();
+    modalNode.classList.add('modal--opaque');
   }, 0);
 
   modalNode.classList.remove('modal--closed');
@@ -43,10 +46,14 @@ const showKeyboardModal = () => {
 };
 
 const closeModal = () => {
-  modalNode.classList.add('modal--closed');
-  titleNode.classList.remove('modal__title--win');
-  titleNode.classList.remove('modal__title--fail');
-  document.body.classList.remove('no-scroll');
+  modalNode.classList.remove('modal--opaque');
+
+  setTimeout(() => {
+    modalNode.classList.add('modal--closed');
+    titleNode.classList.remove('modal__title--win');
+    titleNode.classList.remove('modal__title--fail');
+    document.body.classList.remove('no-scroll');
+  }, OPACITY_TRANSITION_TIME_MS);
 
   if (!modalNode.classList.contains('modal--keyboard')) {
     startGame(false);
