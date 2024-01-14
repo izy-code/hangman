@@ -48,10 +48,13 @@ const startGame = (isInitial) => {
   const randomIndex = getRandomIndex();
   const { answer, question } = data[randomIndex];
 
+  console.clear();
+  console.log('Ensure your keyboard is set to the English layout.');
+  console.log(`Answer: ${answer}`);
+
   currentAnswer = answer.toUpperCase();
   excludedIndexes.push(randomIndex);
   localStorage.setItem('izyQuestionIndex', randomIndex);
-  console.log(`Answer: ${answer}`);
 
   if (excludedIndexes.length === data.length) {
     excludedIndexes = [randomIndex];
