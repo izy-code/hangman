@@ -44,14 +44,16 @@ document.addEventListener('keydown', (evt) => {
 
   if (/^[A-Z]$/.test(keyValue)) {
     if (!guessedLetters.includes(keyValue)) {
-      const pressedKeyNode = keyboardNode.children.find(
+      const pressedKeyNode = [...keyboardNode.children].find(
         (keyNode) => keyNode.textContent === keyValue
       );
 
       handleKeyPress(pressedKeyNode);
     }
   } else {
-    showKeyboardLayoutModal();
+    if (evt.key !== 'Escape') {
+      showKeyboardLayoutModal();
+    }
   }
 });
 

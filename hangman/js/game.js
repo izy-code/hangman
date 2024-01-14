@@ -17,6 +17,10 @@ const getRandomIndex = () => {
   return availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
 };
 
+const checkLetter = (guessedLetters) => {
+
+};
+
 const startGame = (isInitial) => {
   if (isInitial) {
     excludedIndexes.push(+localStorage.getItem('lastQuestionIndex'));

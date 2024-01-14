@@ -23,8 +23,9 @@ const showModal = (isWin, answer) => {
 
 const showKeyboardLayoutModal = () => {
   titleNode.classList.add('modal__title--fail');
-  titleNode.textContent = 'Wrong keyboard layout';
-  answerNode.textContent = 'Ensure your keyboard is set to the English layout.';
+  titleNode.textContent = 'Wrong key or layout';
+  answerNode.textContent =
+    'Please use the alphabetic keys on the English keyboard layout';
   buttonNode.textContent = 'OK';
   modalNode.classList.remove('modal--closed');
   document.body.classList.add('no-scroll');
