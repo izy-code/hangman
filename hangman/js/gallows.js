@@ -8,6 +8,7 @@ const partsNumberToName = {
   5: 'left-leg',
   6: 'right-leg',
 };
+const attemptsMax = Object.keys(partsNumberToName).length;
 
 const gallowsNode = createNode(
   'svg',
@@ -41,4 +42,4 @@ const showBodyPart = (partNumber) => {
 
 gallowsNode.append(svgUseNode);
 
-export { partsNumberToName, gallowsNode };
+export { attemptsMax, gallowsNode, showBodyPart };

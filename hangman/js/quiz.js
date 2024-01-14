@@ -1,8 +1,6 @@
 import { createNode } from './util.js';
-import { partsNumberToName } from './gallows.js';
+import { attemptsMax } from './gallows.js';
 import { keyboardNode, resetKeyboard } from './keyboard.js';
-
-const attemptsMax = Object.keys(partsNumberToName).length;
 
 const quizNode = createNode('section', 'quiz');
 const wordNode = createNode('ol', 'quiz__letters');
@@ -46,4 +44,4 @@ const initQuiz = (answer, question) => {
   quizNode.append(wordNode, questionNode, guessesNode, keyboardNode);
 };
 
-export { quizNode, initQuiz, resetQuiz };
+export { quizNode, initQuiz, resetQuiz, setGuessesCount };

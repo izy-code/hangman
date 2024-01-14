@@ -1,9 +1,7 @@
 import { data } from './data.js';
-import { partsNumberToName } from './gallows.js';
+import { attemptsMax } from './gallows.js';
 import { showModal, closeModal } from './modal.js';
-import { initQuiz, resetQuiz } from './quiz.js';
-
-const attemptsMax = Object.keys(partsNumberToName).length;
+import { initQuiz, resetQuiz, setGuessesCount } from './quiz.js';
 
 let excludedIndexes = [];
 let currentAnswer = '';
@@ -30,6 +28,7 @@ const startGame = (isInitial) => {
   currentAnswer = answer;
   excludedIndexes.push(randomIndex);
   localStorage.setItem('lastQuestionIndex', randomIndex);
+  console.log(`Answer: ${answer}`);
 
   if (isInitial) {
     initQuiz(answer, question);
@@ -37,8 +36,6 @@ const startGame = (isInitial) => {
     closeModal();
     resetQuiz(answer, question);
   }
-
-  console.log(`Answer: ${answer}`);
 };
 
-export { startGame };
+export { startGame, checkLetter };
