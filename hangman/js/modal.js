@@ -16,6 +16,16 @@ const showModal = (isWin, answer) => {
   }
 
   answerNode.textContent = `The answer is: ${answer.toUpperCase()}`;
+  buttonNode.textContent = 'Play again!';
+  modalNode.classList.remove('modal--closed');
+  document.body.classList.add('no-scroll');
+};
+
+const showKeyboardLayoutModal = () => {
+  titleNode.classList.add('modal__title--fail');
+  titleNode.textContent = 'Wrong keyboard layout';
+  answerNode.textContent = 'Ensure your keyboard is set to the English layout.';
+  buttonNode.textContent = 'OK';
   modalNode.classList.remove('modal--closed');
   document.body.classList.add('no-scroll');
 };
@@ -27,10 +37,9 @@ const closeModal = () => {
   document.body.classList.remove('no-scroll');
 };
 
-buttonNode.textContent = 'Play again!';
 buttonNode.addEventListener('click', closeModal);
 
 contentNode.append(titleNode, answerNode, buttonNode);
 modalNode.append(contentNode);
 
-export { modalNode, showModal, closeModal };
+export { modalNode, showModal, closeModal, showKeyboardLayoutModal };
