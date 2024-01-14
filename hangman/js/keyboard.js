@@ -4,6 +4,25 @@ import { showKeyboardLayoutModal } from './modal.js';
 
 const CHAR_CODE_A = 65;
 const CHAR_CODE_Z = 90;
+const ALLOWED_KEYS = [
+  'Alt',
+  'Backspace',
+  'CapsLock',
+  'ContextMenu',
+  'Control',
+  'Enter',
+  'Meta',
+  'Shift',
+  'Space',
+  'Tab',
+  'Escape',
+  'F12',
+  'Delete',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+  'ArrowUp',
+];
 
 const keyboardNode = createNode('div', 'quiz__keyboard keyboard');
 
@@ -51,7 +70,7 @@ document.addEventListener('keydown', (evt) => {
       handleKeyPress(pressedKeyNode);
     }
   } else {
-    if (evt.key !== 'Escape') {
+    if (!ALLOWED_KEYS.includes(evt.key)) {
       showKeyboardLayoutModal();
     }
   }

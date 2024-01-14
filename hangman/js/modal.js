@@ -6,6 +6,15 @@ const titleNode = createNode('h2', 'modal__title');
 const answerNode = createNode('p', 'modal__answer');
 const buttonNode = createNode('button', 'modal__restart', { type: 'button' });
 
+const handleModalShow = () => {
+  setTimeout(() => {
+    buttonNode.focus();
+  }, 0);
+
+  modalNode.classList.remove('modal--closed');
+  document.body.classList.add('no-scroll');
+};
+
 const showModal = (isWin, answer) => {
   if (isWin) {
     titleNode.classList.add('modal__title--win');
@@ -17,8 +26,7 @@ const showModal = (isWin, answer) => {
 
   answerNode.textContent = `The answer is: ${answer.toUpperCase()}`;
   buttonNode.textContent = 'Play again!';
-  modalNode.classList.remove('modal--closed');
-  document.body.classList.add('no-scroll');
+  handleModalShow();
 };
 
 const showKeyboardLayoutModal = () => {
@@ -27,8 +35,7 @@ const showKeyboardLayoutModal = () => {
   answerNode.textContent =
     'Please use the alphabetic keys on the English keyboard layout';
   buttonNode.textContent = 'OK';
-  modalNode.classList.remove('modal--closed');
-  document.body.classList.add('no-scroll');
+  handleModalShow();
 };
 
 const closeModal = () => {
