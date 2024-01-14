@@ -20,6 +20,13 @@ const createLetters = (word) => {
   wordNode.append(fragment);
 };
 
+const showLetter = (index, letter) => {
+  const letterNode = wordNode.children[index];
+
+  letterNode.textContent = letter;
+  letterNode.style.borderBottom = 'none';
+};
+
 const setGuessesCount = (guessNumber) => {
   guessesCountNode.textContent = `${guessNumber} / ${attemptsMax}`;
 };
@@ -44,4 +51,4 @@ const initQuiz = (answer, question) => {
   quizNode.append(wordNode, questionNode, guessesNode, keyboardNode);
 };
 
-export { quizNode, initQuiz, resetQuiz, setGuessesCount };
+export { quizNode, initQuiz, resetQuiz, showLetter, setGuessesCount };
