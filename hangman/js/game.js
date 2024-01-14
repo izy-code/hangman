@@ -40,10 +40,12 @@ const checkLetter = (guessedLetters) => {
 
   if (shownLettersCount === currentAnswer.length) {
     showModal(true, currentAnswer);
+    document.removeEventListener('keydown', onDocumentKeydown);
   }
 
   if (mistakesCount === attemptsMax) {
     showModal(false, currentAnswer);
+    document.removeEventListener('keydown', onDocumentKeydown);
   }
 };
 
