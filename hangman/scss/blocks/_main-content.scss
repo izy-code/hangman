@@ -1,7 +1,6 @@
 @use "../common/forward" as *;
 
 $width-max: 1250px;
-$height-min: 640px;
 
 .main-content {
   display: grid;
@@ -18,16 +17,8 @@ $height-min: 640px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0 10px;
-
-    @media (max-height: $height-min) {
-      height: unset;
-    }
-  }
-
-  @media (width <= calc($width-mobile - 1px)) {
-    height: unset;
   }
 }
 
