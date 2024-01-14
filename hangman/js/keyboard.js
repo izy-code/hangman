@@ -58,7 +58,7 @@ keyboardNode.addEventListener('click', (evt) => {
   }
 });
 
-document.addEventListener('keydown', (evt) => {
+const onDocumentKeydown = (evt) => {
   const keyValue = evt.key.toUpperCase();
 
   if (/^[A-Z]$/.test(keyValue)) {
@@ -74,6 +74,6 @@ document.addEventListener('keydown', (evt) => {
       showKeyboardModal();
     }
   }
-});
+};
 
-export { keyboardNode, resetKeyboard };
+export { keyboardNode, resetKeyboard, onDocumentKeydown };
