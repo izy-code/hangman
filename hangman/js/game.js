@@ -1,21 +1,25 @@
 import { data } from './data.js';
-import { attemptsMax, showBodyPart } from './gallows.js';
-import { showModal, closeModal } from './modal.js';
+import { attemptsMax, showBodyPart, resetGallows } from './gallows.js';
+import { onDocumentKeydown } from './keyboard.js';
+import { showModal } from './modal.js';
 import { initQuiz, resetQuiz, showLetter, setGuessesCount } from './quiz.js';
 
-let excludedIndexes = [];
+let excludedDataIndexes = [];
 let currentAnswer = '';
+let shownLettersCount = 0;
 let mistakesCount = 0;
 
 const getRandomIndex = () => {
-  const availableIndexes = data.reduce((acc, item, index) => {
-    if (!excludedIndexes.includes(index)) {
+  const availableDataIndexes = data.reduce((acc, item, index) => {
+    if (!excludedDataIndexes.includes(index)) {
       acc.push(index);
     }
     return acc;
   }, []);
 
-  return availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
+  return availableDataIndexes[
+    Math.floor(Math.random() * availableDataIndexes.length)
+  ];
 };
 
 const checkLetter = (guessedLetters) => {
@@ -26,6 +30,7 @@ const checkLetter = (guessedLetters) => {
     currentAnswer.split('').forEach((char, index) => {
       if (char === guessedLetter) {
         showLetter(index, guessedLetter);
+        shownLettersCount++;
       }
     });
   } else {
@@ -33,16 +38,18 @@ const checkLetter = (guessedLetters) => {
     showBodyPart(mistakesCount);
   }
 
-  if (mistakesCount === attemptsMax) {
+  if (shownLettersCount === currentAnswer.length) {
+    showModal(true, currentAnswer);
   }
 
-  if (guessCount === currentAnswer.length) {
+  if (mistakesCount === attemptsMax) {
+    showModal(false, currentAnswer);
   }
 };
 
 const startGame = (isInitial) => {
   if (isInitial) {
-    excludedIndexes.push(+localStorage.getItem('izyQuestionIndex'));
+    excludedDataIndexes.push(+localStorage.getItem('izyDataIndex'));
   }
 
   const randomIndex = getRandomIndex();
@@ -53,18 +60,21 @@ const startGame = (isInitial) => {
   console.log(`Answer: ${answer}`);
 
   currentAnswer = answer.toUpperCase();
-  excludedIndexes.push(randomIndex);
-  localStorage.setItem('izyQuestionIndex', randomIndex);
+  excludedDataIndexes.push(randomIndex);
+  localStorage.setItem('izyDataIndex', randomIndex);
+  shownLettersCount = 0;
+  mistakesCount = 0;
+  document.addEventListener('keydown', onDocumentKeydown);
 
-  if (excludedIndexes.length === data.length) {
-    excludedIndexes = [randomIndex];
+  if (excludedDataIndexes.length === data.length) {
+    excludedDataIndexes = [randomIndex];
   }
 
   if (isInitial) {
     initQuiz(answer, question);
   } else {
-    closeModal();
     resetQuiz(answer, question);
+    resetGallows();
   }
 };
 
