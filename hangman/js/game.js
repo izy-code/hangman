@@ -4,6 +4,8 @@ import { onDocumentKeydown } from './keyboard.js';
 import { showModal } from './modal.js';
 import { initQuiz, resetQuiz, showLetter, setGuessesCount } from './quiz.js';
 
+const LOCAL_STORAGE_KEY = 'izyDataIndex';
+
 let excludedDataIndexes = [];
 let currentAnswer = '';
 let shownLettersCount = 0;
@@ -20,6 +22,21 @@ const getRandomIndex = () => {
   return availableDataIndexes[
     Math.floor(Math.random() * availableDataIndexes.length)
   ];
+};
+
+const updateDataIndexes = (newDataIndex) => {
+  localStorage.setItem(LOCAL_STORAGE_KEY, newDataIndex);
+  excludedDataIndexes.push(newDataIndex);
+
+  if (excludedDataIndexes.length === data.length) {
+    excludedDataIndexes = [newDataIndex];
+  }
+};
+
+const showConsoleMessages = (answer) => {
+  console.clear();
+  console.log('Ensure your keyboard is set to the English layout.');
+  console.log(`Answer: ${answer}`);
 };
 
 const checkLetter = (guessedLetters) => {
@@ -51,26 +68,19 @@ const checkLetter = (guessedLetters) => {
 
 const startGame = (isInitial) => {
   if (isInitial) {
-    excludedDataIndexes.push(+localStorage.getItem('izyDataIndex'));
+    excludedDataIndexes.push(+localStorage.getItem(LOCAL_STORAGE_KEY));
   }
 
   const randomIndex = getRandomIndex();
   const { answer, question } = data[randomIndex];
 
-  console.clear();
-  console.log('Ensure your keyboard is set to the English layout.');
-  console.log(`Answer: ${answer}`);
-
+  updateDataIndexes(randomIndex);
+  showConsoleMessages(answer);
   currentAnswer = answer.toUpperCase();
-  excludedDataIndexes.push(randomIndex);
-  localStorage.setItem('izyDataIndex', randomIndex);
   shownLettersCount = 0;
   mistakesCount = 0;
-  document.addEventListener('keydown', onDocumentKeydown);
 
-  if (excludedDataIndexes.length === data.length) {
-    excludedDataIndexes = [randomIndex];
-  }
+  document.addEventListener('keydown', onDocumentKeydown);
 
   if (isInitial) {
     initQuiz(answer, question);
