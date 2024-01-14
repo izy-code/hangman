@@ -1,5 +1,7 @@
 import { createNode, animateValue } from './util.js';
 
+const OPACITY_TRANSITION_TIME_MS = 600;
+
 const partsNumberToName = {
   1: 'head',
   2: 'body',
@@ -32,7 +34,7 @@ const svgUseNode = createNode(
 );
 
 const showBodyPart = (partNumber) => {
-  animateValue(0, 1, 1200, (value) => {
+  animateValue(0, 1, OPACITY_TRANSITION_TIME_MS, (value) => {
     gallowsNode.style.setProperty(
       `--${partsNumberToName[partNumber]}-opacity`,
       value
@@ -41,8 +43,17 @@ const showBodyPart = (partNumber) => {
 };
 
 const resetGallows = () => {
-  animateValue(1, 0, 1200, (value) => {
-    Object.values(partsNumberToName).forEach((partName) => {
+  const bodyParts = Object.values(partsNumberToName);
+  const shownBodyParts = bodyParts.filter((partName) => {
+    const partOpacity = getComputedStyle(gallowsNode).getPropertyValue(
+      `--${partName}-opacity`
+    );
+
+    return partOpacity !== '0';
+  });
+
+  shownBodyParts.forEach((partName) => {
+    animateValue(1, 0, OPACITY_TRANSITION_TIME_MS, (value) => {
       gallowsNode.style.setProperty(`--${partName}-opacity`, value);
     });
   });
