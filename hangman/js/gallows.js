@@ -40,6 +40,14 @@ const showBodyPart = (partNumber) => {
   });
 };
 
+const resetGallows = () => {
+  animateValue(1, 0, 1200, (value) => {
+    Object.values(partsNumberToName).forEach((partName) => {
+      gallowsNode.style.setProperty(`--${partName}-opacity`, value);
+    });
+  });
+};
+
 gallowsNode.append(svgUseNode);
 
-export { attemptsMax, gallowsNode, showBodyPart };
+export { attemptsMax, gallowsNode, showBodyPart, resetGallows };
