@@ -17,14 +17,14 @@ const showModal = (isWin, answer) => {
 
   answerNode.textContent = `The answer is: ${answer.toUpperCase()}`;
   modalNode.classList.remove('modal--closed');
-  document.body.classList.add = 'no-scroll';
+  document.body.classList.add('no-scroll');
 };
 
 const closeModal = () => {
   modalNode.classList.add('modal--closed');
   titleNode.classList.remove('modal__title--win');
   titleNode.classList.remove('modal__title--fail');
-  document.body.classList.remove = 'no-scroll';
+  document.body.classList.remove('no-scroll');
 };
 
 buttonNode.textContent = 'Play again!';

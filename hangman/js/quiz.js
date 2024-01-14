@@ -35,8 +35,6 @@ const resetQuiz = (answer, question, isInitial = false) => {
   createLetters(answer);
   questionNode.textContent = question;
   setGuessesCount(0);
-
-  return quizNode;
 };
 
 const initQuiz = (answer, question) => {
@@ -46,8 +44,6 @@ const initQuiz = (answer, question) => {
   guessesNode.append(guessesCountNode);
 
   quizNode.append(wordNode, questionNode, guessesNode, keyboardNode);
-
-  return quizNode;
 };
 
-export { initQuiz, resetQuiz };
+export { quizNode, initQuiz, resetQuiz };
