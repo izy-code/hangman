@@ -31,3 +31,7 @@ body {
     background-color: var(--color-bg-main);
   }
 }
+
+.no-scroll {
+  overflow: hidden;
+}

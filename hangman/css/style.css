@@ -52,6 +52,10 @@ body {
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .main-content {
   display: grid;
   grid-template-columns: 400px 1fr;
