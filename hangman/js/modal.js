@@ -19,7 +19,7 @@ const handleModalShow = () => {
   document.body.classList.add('no-scroll');
 };
 
-const showModal = (isWin, answer) => {
+const showEndingModal = (isWin, answer) => {
   modalNode.classList.remove('modal--keyboard');
 
   if (isWin) {
@@ -43,6 +43,8 @@ const showKeyboardModal = () => {
     'Please use the alphabetic keys on the English keyboard layout';
   buttonNode.textContent = 'OK';
   handleModalShow();
+  document.addEventListener('keydown', onDocumentEscapeKeydown);
+  modalNode.addEventListener('click', onModalClick);
 };
 
 const closeModal = () => {
@@ -57,12 +59,27 @@ const closeModal = () => {
 
   if (!modalNode.classList.contains('modal--keyboard')) {
     startGame(false);
+  } else {
+    document.removeEventListener('keydown', onDocumentEscapeKeydown);
+    modalNode.removeEventListener('click', onModalClick);
   }
 };
+
+function onDocumentEscapeKeydown (evt) {
+  if (evt.key === 'Escape') {
+    closeModal();
+  }
+}
+
+function onModalClick (evt) {
+  if (!evt.composedPath().includes(contentNode)) {
+    closeModal();
+  }
+}
 
 buttonNode.addEventListener('click', closeModal);
 
 contentNode.append(titleNode, answerNode, buttonNode);
 modalNode.append(contentNode);
 
-export { modalNode, showModal, closeModal, showKeyboardModal };
+export { modalNode, showEndingModal, closeModal, showKeyboardModal };

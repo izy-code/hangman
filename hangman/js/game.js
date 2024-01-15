@@ -1,7 +1,7 @@
 import { data } from './data.js';
 import { attemptsMax, showBodyPart, resetGallows } from './gallows.js';
 import { onDocumentKeydown } from './keyboard.js';
-import { showModal } from './modal.js';
+import { showEndingModal } from './modal.js';
 import { initQuiz, resetQuiz, showLetter, setGuessesCount } from './quiz.js';
 
 const LOCAL_STORAGE_KEY = 'izyDataIndex';
@@ -16,6 +16,7 @@ const getRandomIndex = () => {
     if (!excludedDataIndexes.includes(index)) {
       acc.push(index);
     }
+
     return acc;
   }, []);
 
@@ -56,12 +57,12 @@ const checkLetter = (guessedLetters) => {
   }
 
   if (shownLettersCount === currentAnswer.length) {
-    showModal(true, currentAnswer);
+    showEndingModal(true, currentAnswer);
     document.removeEventListener('keydown', onDocumentKeydown);
   }
 
   if (mistakesCount === attemptsMax) {
-    showModal(false, currentAnswer);
+    showEndingModal(false, currentAnswer);
     document.removeEventListener('keydown', onDocumentKeydown);
   }
 };
