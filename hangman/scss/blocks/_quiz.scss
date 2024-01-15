@@ -39,11 +39,13 @@ $width-keyboard-bpoint: 450px;
 }
 
 .quiz__question {
+  min-height: 82px;
   margin: 0;
   margin-bottom: 30px;
   font-size: 22px;
 
   @include media-laptop {
+    min-height: 108px;
     margin-bottom: 14px;
     font-size: 18px;
   }
