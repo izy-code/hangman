@@ -38,6 +38,7 @@
     color: var(--color-text-disabled);
     background-color: var(--color-btn-hover);
     opacity: 0.5;
+    cursor: initial;
 
     @include media-laptop {
       background-color: var(--color-btn-basic);

@@ -15,6 +15,7 @@ $color-light: #e1d4c9;
 $color-grey: #f0f0f0;
 $color-red: #ff4d4d;
 $color-green: #5eaa2f;
+$color-blue: #2b2ec0;
 
 :root {
   --font-primary: "Arial", sans-serif;
@@ -22,6 +23,7 @@ $color-green: #5eaa2f;
   --color-text-dark: #{$color-dark};
   --color-text-alert: #{$color-red};
   --color-text-success: #{$color-green};
+  --color-text-accent: #{$color-blue};
   --color-text-disabled: #{$color-black};
 
   --color-bg-body: #{$color-light};

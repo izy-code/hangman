@@ -29,6 +29,7 @@ $width-keyboard-bpoint: 450px;
   height: 30px;
   font-size: 27px;
   line-height: 1;
+  color: var(--color-text-accent);
   border-bottom: 3px solid var(--color-bd-dark);
 
   @include media-laptop {
