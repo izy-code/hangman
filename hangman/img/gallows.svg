@@ -8,15 +8,15 @@
   </g>
 
   <g class="hangman">
-    <circle class="head" cx="303" cy="202" r="47.5" stroke="#909090" stroke-width="5" opacity="var(--head-opacity)" />
-    <rect x="301" y="251" width="5" height="132" fill="#909090" rx="2" opacity="var(--body-opacity)" />
-    <rect x="302" y="268" width="5" height="100" transform="rotate(39.64 302 268)" fill="#909090" rx="2"
+    <circle class="head" cx="303" cy="202" r="47.5" stroke="#ff4d4d" stroke-width="5" opacity="var(--head-opacity)" />
+    <rect x="301" y="251" width="5" height="132" fill="#ff4d4d" rx="2" opacity="var(--body-opacity)" />
+    <rect x="302" y="268" width="5" height="100" transform="rotate(39.64 302 268)" fill="#ff4d4d" rx="2"
       opacity="var(--left-arm-opacity)" />
-    <rect x="301.15" y="271.19" width="5" height="100" transform="rotate(-39.6353 301.15 271.19)" fill="#909090" rx="2"
+    <rect x="301.15" y="271.19" width="5" height="100" transform="rotate(-39.6353 301.15 271.19)" fill="#ff4d4d" rx="2"
       opacity="var(--right-arm-opacity)" />
-    <rect x="301.796" y="378" width="5" height="100" transform="rotate(39.64 301.796 378)" fill="#909090" rx="2"
+    <rect x="301.796" y="378" width="5" height="100" transform="rotate(39.64 301.796 378)" fill="#ff4d4d" rx="2"
       opacity="var(--left-leg-opacity)" />
-    <rect x="301.3" y="381.189" width="5" height="100" transform="rotate(-39.6353 301.3 381.189)" fill="#909090" rx="2"
+    <rect x="301.3" y="381.189" width="5" height="100" transform="rotate(-39.6353 301.3 381.189)" fill="#ff4d4d" rx="2"
       opacity="var(--right-leg-opacity)" />
   </g>
 </svg>
