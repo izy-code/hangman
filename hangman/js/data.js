@@ -43,11 +43,6 @@ const data = [
       'What system translates domain names to IP addresses on the internet?',
   },
   {
-    answer: 'Hosting',
-    question:
-      'What term refers to the service that allows individuals and organizations to make their websites accessible via the World Wide Web?',
-  },
-  {
     answer: 'Security',
     question:
       'What aspect of web development focuses on protecting websites and web applications from cyber threats?',
@@ -101,7 +96,7 @@ const data = [
     answer: 'Truthy',
     question:
       'What term in JS describes a value that is considered true when evaluated in a Boolean context, even if it is not a strict Boolean true value?',
-  },
+  }
 ];
 
 export { data };
