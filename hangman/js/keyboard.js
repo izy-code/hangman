@@ -69,10 +69,8 @@ const onDocumentKeydown = (evt) => {
 
       handleKeyPress(pressedKeyNode);
     }
-  } else {
-    if (!ALLOWED_KEYS.includes(evt.key)) {
-      showKeyboardModal();
-    }
+  } else if (!ALLOWED_KEYS.includes(evt.key)) {
+    showKeyboardModal();
   }
 };
 

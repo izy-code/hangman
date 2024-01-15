@@ -13,4 +13,3 @@ startGame(true);
 
 mainNode.append(headingNode, gallowsNode, quizNode, modalNode);
 document.body.append(mainNode);
-

@@ -65,13 +65,13 @@ const closeModal = () => {
   }
 };
 
-function onDocumentEscapeKeydown (evt) {
+function onDocumentEscapeKeydown(evt) {
   if (evt.key === 'Escape') {
     closeModal();
   }
 }
 
-function onModalClick (evt) {
+function onModalClick(evt) {
   if (!evt.composedPath().includes(contentNode)) {
     closeModal();
   }
