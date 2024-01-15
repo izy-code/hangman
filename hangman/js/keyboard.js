@@ -13,7 +13,7 @@ const ALLOWED_KEYS = [
   'Enter',
   'Meta',
   'Shift',
-  'Space',
+  ' ',
   'Tab',
   'Escape',
   'F12',
