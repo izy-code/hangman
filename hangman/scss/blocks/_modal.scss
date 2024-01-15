@@ -22,7 +22,7 @@
 
 .modal__content {
   position: relative;
-  width: 300px;
+  width: 340px;
   margin: auto;
   padding: 20px;
   background-color: var(--color-bg-modal);
@@ -45,19 +45,20 @@
   }
 }
 
-.modal__answer {
+.modal__text {
   margin: 0 0 24px;
   font-size: 20px;
   line-height: 26px;
   text-align: center;
 }
 
-.modal__restart {
+.modal__button {
   display: block;
   margin: 0 auto;
-  padding: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
   background-color: var(--color-btn-basic);
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.5s ease;
 

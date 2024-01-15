@@ -6,8 +6,8 @@ const OPACITY_TRANSITION_TIME_MS = 600;
 const modalNode = createNode('div', 'modal modal--closed');
 const contentNode = createNode('div', 'modal__content');
 const titleNode = createNode('h2', 'modal__title');
-const answerNode = createNode('p', 'modal__answer');
-const buttonNode = createNode('button', 'modal__restart', { type: 'button' });
+const textNode = createNode('p', 'modal__text');
+const buttonNode = createNode('button', 'modal__button', { type: 'button' });
 
 const handleModalShow = () => {
   setTimeout(() => {
@@ -30,7 +30,7 @@ const showEndingModal = (isWin, answer) => {
     titleNode.textContent = 'Your guess was wrong';
   }
 
-  answerNode.textContent = `The answer is: ${answer.toUpperCase()}`;
+  textNode.textContent = `The answer is: ${answer.toUpperCase()}`;
   buttonNode.textContent = 'Play again!';
   handleModalShow();
 };
@@ -39,7 +39,7 @@ const showKeyboardModal = () => {
   modalNode.classList.add('modal--keyboard');
   titleNode.classList.add('modal__title--fail');
   titleNode.textContent = 'Wrong key or layout';
-  answerNode.textContent =
+  textNode.textContent =
     'Please use the alphabetic keys on the English keyboard layout';
   buttonNode.textContent = 'OK';
   handleModalShow();
@@ -79,7 +79,7 @@ function onModalClick(evt) {
 
 buttonNode.addEventListener('click', closeModal);
 
-contentNode.append(titleNode, answerNode, buttonNode);
+contentNode.append(titleNode, textNode, buttonNode);
 modalNode.append(contentNode);
 
 export { modalNode, showEndingModal, closeModal, showKeyboardModal };
