@@ -20,7 +20,7 @@ const createNode = (tagName, classNames, attribsObject, isSVG = false) => {
   return newNode;
 };
 
-/* Function for custom CSS properties transition, because <use href="..."> SVG
+/* Function for custom CSS properties cubic-bezier eased transition, because <use href="..."> SVG
 doesn't support properties transitions in styles */
 const animateValue = (startValue, endValue, duration, callback) => {
   const startTime = performance.now();
