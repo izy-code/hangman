@@ -70,7 +70,7 @@ const data = [
   {
     answer: 'Closure',
     question:
-      'What term in JavaScript refers to the ability of a function to access variables from its outer scope even after the function has finished execution?',
+      'What term in JS refers to the ability of a function to access variables from its outer scope even after the function has finished execution?',
   },
   {
     answer: 'Callback',
@@ -80,27 +80,27 @@ const data = [
   {
     answer: 'Promise',
     question:
-      'What is an object in JavaScript representing the eventual completion or failure of an asynchronous operation?',
+      'What is an object in JS representing the eventual completion or failure of an asynchronous operation?',
   },
   {
     answer: 'Hoisting',
     question:
-      'What is a behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during the compilation phase?',
+      'What is a behavior in JS where variable and function declarations are moved to the top of their containing scope during the compilation phase?',
   },
   {
     answer: 'Event',
     question:
-      'What term in JavaScript refers to an action or occurrence detected by the program that can be responded to, such as a user clicking a button?',
+      'What term in JS refers to an action or occurrence detected by the program that can be responded to, such as a user clicking a button?',
   },
   {
     answer: 'Arrow',
     question:
-      'What concise syntax introduced in ECMAScript 6 allows the creation of anonymous functions more easily, often used for short, one-line functions?',
+      'What concise syntax introduced in ES 6 allows the creation of anonymous functions more easily, often used for short, one-line functions?',
   },
   {
     answer: 'Truthy',
     question:
-      'What term in JavaScript describes a value that is considered true when evaluated in a Boolean context, even if it is not a strict Boolean true value?',
+      'What term in JS describes a value that is considered true when evaluated in a Boolean context, even if it is not a strict Boolean true value?',
   },
 ];
 
