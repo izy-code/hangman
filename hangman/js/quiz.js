@@ -1,5 +1,5 @@
 import { createNode } from './util.js';
-import { attemptsMax } from './gallows.js';
+import { mistakesMax } from './gallows.js';
 import { keyboardNode, resetKeyboard } from './keyboard.js';
 
 const quizNode = createNode('section', 'quiz');
@@ -28,7 +28,7 @@ const showLetter = (index, letter) => {
 };
 
 const setGuessesCount = (guessNumber) => {
-  guessesCountNode.textContent = `${guessNumber} / ${attemptsMax}`;
+  guessesCountNode.textContent = `${guessNumber} / ${mistakesMax}`;
 };
 
 const resetQuiz = (answer, question, isInitial = false) => {
@@ -47,7 +47,6 @@ const initQuiz = (answer, question) => {
 
   guessesNode.textContent = 'Incorrect guesses: ';
   guessesNode.append(guessesCountNode);
-
   quizNode.append(wordNode, questionNode, guessesNode, keyboardNode);
 };
 

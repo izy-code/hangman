@@ -1,5 +1,5 @@
 import { data } from './data.js';
-import { attemptsMax, showBodyPart, resetGallows } from './gallows.js';
+import { mistakesMax, showBodyPart, resetGallows } from './gallows.js';
 import { onDocumentKeydown } from './keyboard.js';
 import { showEndingModal } from './modal.js';
 import { initQuiz, resetQuiz, showLetter, setGuessesCount } from './quiz.js';
@@ -25,7 +25,7 @@ const getRandomIndex = () => {
   ];
 };
 
-const updateDataIndexes = (newDataIndex) => {
+const addDataIndex = (newDataIndex) => {
   localStorage.setItem(LOCAL_STORAGE_KEY, newDataIndex);
   excludedDataIndexes.push(newDataIndex);
 
@@ -45,8 +45,8 @@ const checkLetter = (guessedLetters) => {
   const guessedLetter = guessedLetters[guessCount - 1];
 
   if (currentAnswer.includes(guessedLetter)) {
-    currentAnswer.split('').forEach((char, index) => {
-      if (char === guessedLetter) {
+    currentAnswer.split('').forEach((letter, index) => {
+      if (letter === guessedLetter) {
         showLetter(index, guessedLetter);
         shownLettersCount++;
       }
@@ -61,7 +61,7 @@ const checkLetter = (guessedLetters) => {
     document.removeEventListener('keydown', onDocumentKeydown);
   }
 
-  if (mistakesCount === attemptsMax) {
+  if (mistakesCount === mistakesMax) {
     showEndingModal(false, currentAnswer);
     document.removeEventListener('keydown', onDocumentKeydown);
   }
@@ -75,7 +75,7 @@ const startGame = (isInitial) => {
   const randomIndex = getRandomIndex();
   const { answer, question } = data[randomIndex];
 
-  updateDataIndexes(randomIndex);
+  addDataIndex(randomIndex);
   showConsoleMessages(answer);
   currentAnswer = answer.toUpperCase();
   shownLettersCount = 0;

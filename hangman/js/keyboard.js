@@ -42,22 +42,6 @@ const handleKeyPress = (keyNode) => {
   checkLetter(guessedLetters);
 };
 
-for (let charCode = CHAR_CODE_A; charCode <= CHAR_CODE_Z; charCode++) {
-  const keyNode = createNode('button', 'keyboard__key', { type: 'button' });
-  const keyLetter = String.fromCharCode(charCode);
-
-  keyNode.textContent = keyLetter;
-  keyboardNode.append(keyNode);
-}
-
-keyboardNode.addEventListener('click', (evt) => {
-  const keyNode = evt.target.closest('.keyboard__key:not(:disabled)');
-
-  if (keyNode) {
-    handleKeyPress(keyNode);
-  }
-});
-
 const onDocumentKeydown = (evt) => {
   const keyValue = evt.key.toUpperCase();
 
@@ -73,5 +57,21 @@ const onDocumentKeydown = (evt) => {
     showKeyboardModal();
   }
 };
+
+for (let charCode = CHAR_CODE_A; charCode <= CHAR_CODE_Z; charCode++) {
+  const keyNode = createNode('button', 'keyboard__key', { type: 'button' });
+  const keyLetter = String.fromCharCode(charCode);
+
+  keyNode.textContent = keyLetter;
+  keyboardNode.append(keyNode);
+}
+
+keyboardNode.addEventListener('click', (evt) => {
+  const keyNode = evt.target.closest('.keyboard__key:not(:disabled)');
+
+  if (keyNode) {
+    handleKeyPress(keyNode);
+  }
+});
 
 export { keyboardNode, resetKeyboard, onDocumentKeydown };

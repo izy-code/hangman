@@ -82,4 +82,4 @@ buttonNode.addEventListener('click', closeModal);
 contentNode.append(titleNode, textNode, buttonNode);
 modalNode.append(contentNode);
 
-export { modalNode, showEndingModal, closeModal, showKeyboardModal };
+export { modalNode, showEndingModal, showKeyboardModal, closeModal };
