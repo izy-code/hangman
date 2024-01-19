@@ -1,5 +1,5 @@
 import { createNode } from './util.js';
-import { checkLetter } from './game.js';
+import { checkGuessedLetter } from './game.js';
 import { showKeyboardModal } from './modal.js';
 
 const CHAR_CODE_A = 65;
@@ -16,6 +16,7 @@ const ALLOWED_KEYS = [
   ' ',
   'Tab',
   'Escape',
+  'F5',
   'F12',
   'Delete',
   'ArrowDown',
@@ -39,7 +40,7 @@ const resetKeyboard = () => {
 const handleKeyPress = (keyNode) => {
   keyNode.setAttribute('disabled', '');
   guessedLetters.push(keyNode.textContent);
-  checkLetter(guessedLetters);
+  checkGuessedLetter(guessedLetters.at(-1));
 };
 
 const onDocumentKeydown = (evt) => {

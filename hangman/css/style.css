@@ -170,12 +170,12 @@ body {
   }
 }
 
-.quiz__guesses {
+.quiz__mistakes {
   margin: 0;
   margin-bottom: 50px;
 }
 @media (max-width: 1100px) {
-  .quiz__guesses {
+  .quiz__mistakes {
     margin-bottom: 18px;
     font-size: 16px;
   }

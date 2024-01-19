@@ -2,7 +2,7 @@ import { data } from './data.js';
 import { mistakesMax, showBodyPart, resetGallows } from './gallows.js';
 import { onDocumentKeydown } from './keyboard.js';
 import { showEndingModal } from './modal.js';
-import { initQuiz, resetQuiz, showLetter, setGuessesCount } from './quiz.js';
+import { initQuiz, resetQuiz, showLetter, setMistakesCount } from './quiz.js';
 
 const LOCAL_STORAGE_KEY = 'izyDataIndex';
 
@@ -12,13 +12,9 @@ let shownLettersCount = 0;
 let mistakesCount = 0;
 
 const getRandomIndex = () => {
-  const availableDataIndexes = data.reduce((acc, item, index) => {
-    if (!excludedDataIndexes.includes(index)) {
-      acc.push(index);
-    }
-
-    return acc;
-  }, []);
+  const availableDataIndexes = [...data.keys()].filter(
+    (index) => !excludedDataIndexes.includes(index)
+  );
 
   return availableDataIndexes[
     Math.floor(Math.random() * availableDataIndexes.length)
@@ -40,10 +36,7 @@ const showConsoleMessages = (answer) => {
   console.log(`Answer: ${answer}`);
 };
 
-const checkLetter = (guessedLetters) => {
-  const guessCount = guessedLetters.length;
-  const guessedLetter = guessedLetters[guessCount - 1];
-
+const checkGuessedLetter = (guessedLetter) => {
   if (currentAnswer.includes(guessedLetter)) {
     currentAnswer.split('').forEach((letter, index) => {
       if (letter === guessedLetter) {
@@ -52,18 +45,16 @@ const checkLetter = (guessedLetters) => {
       }
     });
   } else {
-    setGuessesCount(++mistakesCount);
+    setMistakesCount(++mistakesCount);
     showBodyPart(mistakesCount);
   }
 
   if (shownLettersCount === currentAnswer.length) {
     showEndingModal(true, currentAnswer);
-    document.removeEventListener('keydown', onDocumentKeydown);
   }
 
   if (mistakesCount === mistakesMax) {
     showEndingModal(false, currentAnswer);
-    document.removeEventListener('keydown', onDocumentKeydown);
   }
 };
 
@@ -78,17 +69,17 @@ const startGame = (isInitial) => {
   addDataIndex(randomIndex);
   showConsoleMessages(answer);
   currentAnswer = answer.toUpperCase();
-  shownLettersCount = 0;
-  mistakesCount = 0;
-
-  document.addEventListener('keydown', onDocumentKeydown);
 
   if (isInitial) {
     initQuiz(answer, question);
   } else {
     resetQuiz(answer, question);
     resetGallows();
+    shownLettersCount = 0;
+    mistakesCount = 0;
   }
+
+  document.addEventListener('keydown', onDocumentKeydown);
 };
 
-export { startGame, checkLetter };
+export { startGame, checkGuessedLetter };

@@ -1,5 +1,6 @@
 import { createNode } from './util.js';
 import { startGame } from './game.js';
+import { onDocumentKeydown } from './keyboard.js';
 
 const OPACITY_TRANSITION_TIME_MS = 600;
 
@@ -33,16 +34,21 @@ const showEndingModal = (isWin, answer) => {
   textNode.textContent = `The answer is: ${answer.toUpperCase()}`;
   buttonNode.textContent = 'Play again!';
   handleModalShow();
+
+  document.removeEventListener('keydown', onDocumentKeydown);
 };
 
 const showKeyboardModal = () => {
   modalNode.classList.add('modal--keyboard');
+
   titleNode.classList.add('modal__title--fail');
   titleNode.textContent = 'Wrong key or layout';
+
   textNode.textContent =
     'Please use the alphabetic keys on the English keyboard layout';
   buttonNode.textContent = 'OK';
   handleModalShow();
+
   document.addEventListener('keydown', onDocumentEscapeKeydown);
   modalNode.addEventListener('click', onModalClick);
 };
@@ -57,11 +63,11 @@ const closeModal = () => {
     document.body.classList.remove('no-scroll');
   }, OPACITY_TRANSITION_TIME_MS);
 
-  if (!modalNode.classList.contains('modal--keyboard')) {
-    startGame(false);
-  } else {
+  if (modalNode.classList.contains('modal--keyboard')) {
     document.removeEventListener('keydown', onDocumentEscapeKeydown);
     modalNode.removeEventListener('click', onModalClick);
+  } else {
+    startGame(false);
   }
 };
 

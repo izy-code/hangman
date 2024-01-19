@@ -5,8 +5,8 @@ import { keyboardNode, resetKeyboard } from './keyboard.js';
 const quizNode = createNode('section', 'quiz');
 const wordNode = createNode('ol', 'quiz__letters');
 const questionNode = createNode('h2', 'quiz__question');
-const guessesNode = createNode('p', 'quiz__guesses');
-const guessesCountNode = createNode('span', 'quiz__count');
+const mistakesNode = createNode('p', 'quiz__mistakes');
+const mistakesCountNode = createNode('span', 'quiz__count');
 
 const createLetters = (word) => {
   const fragment = document.createDocumentFragment();
@@ -27,8 +27,8 @@ const showLetter = (index, letter) => {
   letterNode.style.borderBottom = 'none';
 };
 
-const setGuessesCount = (guessNumber) => {
-  guessesCountNode.textContent = `${guessNumber} / ${mistakesMax}`;
+const setMistakesCount = (mistakesCount) => {
+  mistakesCountNode.textContent = `${mistakesCount} / ${mistakesMax}`;
 };
 
 const resetQuiz = (answer, question, isInitial = false) => {
@@ -39,15 +39,15 @@ const resetQuiz = (answer, question, isInitial = false) => {
 
   createLetters(answer);
   questionNode.textContent = question;
-  setGuessesCount(0);
+  setMistakesCount(0);
 };
 
 const initQuiz = (answer, question) => {
   resetQuiz(answer, question, true);
 
-  guessesNode.textContent = 'Incorrect guesses: ';
-  guessesNode.append(guessesCountNode);
-  quizNode.append(wordNode, questionNode, guessesNode, keyboardNode);
+  mistakesNode.textContent = 'Incorrect guesses: ';
+  mistakesNode.append(mistakesCountNode);
+  quizNode.append(wordNode, questionNode, mistakesNode, keyboardNode);
 };
 
-export { quizNode, initQuiz, resetQuiz, showLetter, setGuessesCount };
+export { quizNode, initQuiz, resetQuiz, showLetter, setMistakesCount };
