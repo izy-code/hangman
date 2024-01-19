@@ -11,6 +11,7 @@ Screenshot:
   - [x]  The user can play the game by using the virtual keyboard
   - [x]  The user can play the game by using the physical keyboard
   - [x]  When the letter is correct, it appears instead of the corresponding underscore. If the letter repeats in the word, all corresponding underscores must be replaced by it
+
     When the letter is incorrect:
       - [x]  the incorrect guesses counter is updated
       - [x] a body part is added to the gallows
