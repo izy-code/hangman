@@ -1,6 +1,5 @@
 Deploy: [link](https://rolling-scopes-school.github.io/izy-code-JSFE2023Q4/hangman/)
 
-Screenshot:
 ![rolling-scopes-school github io_izy-code-JSFE2023Q4_hangman_](https://github.com/rolling-scopes-school/izy-code-JSFE2023Q4/assets/126877709/148e67a3-5ef5-456e-be8a-978d3e48e99c)
 
 Task: [link](https://github.com/rolling-scopes-school/tasks/tree/master/stage1/tasks/hangman)
