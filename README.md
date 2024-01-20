@@ -6,7 +6,7 @@ Screenshot:
 Task: [link](https://github.com/rolling-scopes-school/tasks/tree/master/stage1/tasks/hangman)
 
   - [x]  Responsive UI from 1440px to 360px viewport
-  - [x]  The generation of DOM elements is implemented. <body> in the index.html is empty.
+  - [x]  The generation of DOM elements is implemented. Body element in the index.html is empty.
   - [x]  The game starts with the correct default view (empty gallows, underscores for secret word, etc.) and a random question
   - [x]  The user can play the game by using the virtual keyboard
   - [x]  The user can play the game by using the physical keyboard
